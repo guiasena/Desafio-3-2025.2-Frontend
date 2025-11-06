@@ -1,0 +1,93 @@
+.caixa {
+    background: var(--criando);
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+
+.caixa input::placeholder,
+.caixa textarea::placeholder {
+    color: var(--cinza);
+}
+
+.caixa input,
+.caixa textarea {
+    background: inherit;
+    font-family: inherit;
+    border: none;
+    color: var(--branco);
+    outline: none;
+}
+
+input[type="date"] {
+    color: var(--cinza);
+}
+
+.input-icon {
+    display: flex;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+
+.titulo-input {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 0.4rem;
+    margin: 0.4rem;
+    outline: none;
+}
+
+
+.tronco {
+    display: flex;
+    gap: 0.625rem;
+}
+
+
+.tronco-esquerda {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 50%;
+    padding: 0.625rem;
+    padding-right: 0.625rem;
+    border-right: 1px solid #ccc;
+}
+
+
+.tronco-direita {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 50%;
+    padding: 6px;
+}
+
+
+.tronco-direita textarea {
+    width: 100%;
+    padding: 6px;
+    resize: none;
+}
+
+
+.rodape {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    gap: 50%;
+}
+
+
+.rodape button {
+    background: none;
+    border: none;
+    color: var(--cinza);
+    cursor: pointer;
+}
