@@ -26,12 +26,12 @@ export default function Creating({ cancela, salva }) {
             </div>
           </div>
 
-          <div className="tronco-direita">
+          <div className="tronco-direita"> {/* DESCRIÇÃO */}
             <textarea placeholder="Descrição" value={descricao} onChange={(e) => setDescricao(e.target.value)}/> {/* DESCRIÇÃO */}
           </div>
         </div>
       
-        <div className="rodape">
+        <div className="rodape"> {/* BOTÕES (CANCELA E SALVA) */}
           <button onClick={cancela}><FontAwesomeIcon icon={faXmark}/></button>
           <button onClick={() => salva({ titulo, responsavel, prazo, descricao })}><FontAwesomeIcon icon={faCheck}/></button>
         </div>

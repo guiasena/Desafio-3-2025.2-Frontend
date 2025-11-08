@@ -4,7 +4,6 @@
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
-    border: none;
 }
 
 .caixa input::placeholder,
@@ -33,57 +32,50 @@ input[type="date"] {
     display: none;
 }
 
-
 .titulo-input {
     width: 100%;
     font-size: 1.1rem;
     padding: 0.4rem;
     margin: 0.4rem;
-    outline: none;
+    border-bottom: 1px solid var(--cinza);
 }
-
 
 .tronco {
     display: flex;
     gap: 0.625rem;
 }
 
-
 .tronco-esquerda {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 0.4rem;
     width: 50%;
     padding: 0.625rem;
     padding-right: 0.625rem;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid var(--cinza);
 }
-
 
 .tronco-direita {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.5rem;
     width: 50%;
-    padding: 6px;
+    padding: 0.4rem;
 }
-
 
 .tronco-direita textarea {
     width: 100%;
-    padding: 6px;
+    padding: 0.4rem;
     resize: none;
 }
 
-
 .rodape {
-    margin-top: 8px;
+    margin-top: 0.5rem;
     display: flex;
     justify-content: center;
-    padding-top: 10px;
+    padding-top: 0.625rem;
     gap: 50%;
 }
-
 
 .rodape button {
     background: none;

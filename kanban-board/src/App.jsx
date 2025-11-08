@@ -8,38 +8,38 @@ import "./index.css";
 
 export default function App() {
   
-  const [tarefas, setTarefas] = useState({ 
+  const [tarefas, setTarefas] = useState({ // estado que guarda as tarefas em cada coluna
     afazer: [],
     fazendo: [],
     feito: []
   });
 
-  const [criando, setCriando] = useState({
+  const [criando, setCriando] = useState({ // controla se uma nova tarefa está sendo criada em alguma coluna
     afazer: false,
     fazendo: false,
     feito: false
   })
 
-  function handleAdd(coluna) {
+  function handleAdd(coluna) { // inicia a criação de uma nova tarefa
     setCriando({ afazer: false, fazendo: false, feito: false, [coluna]: true });
   }
 
-  function handleCancel() {
+  function handleCancel() { // cancela a criação de uma nova tarefa
     setCriando({ afazer: false, fazendo: false, feito: false });
   }
 
-  function handleSave(coluna, tarefa) {
+  function handleSave(coluna, tarefa) { // salva a nova tarefa na coluna correspondente
     setTarefas((prev) => ({
       ...prev,
       [coluna]: [...prev[coluna], { ...tarefa, status: coluna },]
     }));
-    handleCancel(); // pra não continuar com uma caixa de tarefa
+    handleCancel(); // pra não continuar com uma caixa de tarefa aberta após salvar
   }
 
-  function handleDelete(coluna, index) {
+  function handleDelete(coluna, index) { // deleta a tarefa do índice "index" na coluna "coluna"
     setTarefas((prev) => ({
       ...prev,
-      [coluna]: prev[coluna].filter((_, i) => i !== index) // pega todos os elementos onde o índice i não é igual ao índice do item que quero apagar
+      [coluna]: prev[coluna].filter((_, i) => i !== index) // filtra todas as tarefas, exceto a do índice "index"
     }));
   }
   // AQUI JÁ COMEÇA O QUE VAI NO INDEX.HTML
@@ -60,12 +60,12 @@ export default function App() {
         {/* A FAZER */}
         <div className="coluna">
           {tarefas.afazer.map((t, i) => (
-            <Saving key={i} data={t} status={t.status} deleta={() => handleDelete("afazer", i)} />
+            <Saving key={i} data={t} status={t.status} deleta={() => handleDelete("afazer", i)} /> // renderiza cada tarefa na coluna "A Fazer"
           ))}
           {criando.afazer && (
-            <Creating cancela={handleCancel} salva={(tarefa) => handleSave("afazer", tarefa)} />
+            <Creating cancela={handleCancel} salva={(tarefa) => handleSave("afazer", tarefa)} /> // renderiza a caixa de criação se estiver criando
           )}
-          {!criando.afazer && (
+          {!criando.afazer && ( 
             <button className="addBtn" onClick={() => handleAdd("afazer")}>
               <FontAwesomeIcon icon={faPlus} />
             </button>
@@ -106,7 +106,6 @@ export default function App() {
             </button>
           )}
         </div>
-
       </div>
     </div>
   );
